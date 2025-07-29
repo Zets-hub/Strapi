@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = ({ strapi }) => ({
-  async getAffordablePubs(maxPrice = 15) {
+  async getAffordablePubs({maxPrice, sortOrder}) {
     try {
       const affordablePubs = await strapi.entityService.findMany('api::pub.pub', {
         filters: {
@@ -9,7 +9,8 @@ module.exports = ({ strapi }) => ({
             $lte: maxPrice
           }
         },
-        populate: ['picture']
+        populate: ['picture'],
+        sort: { avgPrice: sortOrder === 'asc' ? 'asc' : 'desc' }
       });
       return affordablePubs;
     } catch (err) {
