@@ -4,6 +4,7 @@ module.exports = {
       method: 'GET',
       path: '/pubs', 
       handler: 'pub.find',
+
     },
     {
       method: 'GET',
