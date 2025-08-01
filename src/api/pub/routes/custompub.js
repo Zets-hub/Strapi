@@ -4,17 +4,12 @@ module.exports = {
       method: 'GET',
       path: '/pubs', 
       handler: 'pub.find',
-      config: { 
-        auth: false,
-      }
     },
     {
       method: 'GET',
       path: '/pubs/affordable', 
       handler: 'pub.findAffordable',
-      config: { 
-        auth: false,
-      }
+
     }
   ]
 };

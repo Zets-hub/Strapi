@@ -5,9 +5,6 @@ module.exports = {
       method: 'GET',
       path: 'api/pubs', 
       handler: 'pub.find',
-      config: { 
-        auth: false,
-      }
     }
   ]
 };
